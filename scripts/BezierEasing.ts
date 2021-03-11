@@ -28,26 +28,13 @@ function getSlope(aT, aA1, aA2) {
 }
 
 function newtonRaphsonIterate(aX, aGuessT, mX1, mX2) {
-    // loop (tradeoff: performance VS precision)
-    // 0
-    let currentSlope = getSlope(aGuessT, mX1, mX2);
-    let currentX = calcBezier(aGuessT, mX1, mX2).sub(aX);
-    aGuessT = Reactive.eq(currentSlope, 0).ifThenElse(aGuessT, Reactive.sub(aGuessT, currentX.div(currentSlope)));
+    let currentSlope, currentX;
 
-    // 1
-    currentSlope = getSlope(aGuessT, mX1, mX2);
-    currentX = calcBezier(aGuessT, mX1, mX2).sub(aX);
-    aGuessT = Reactive.eq(currentSlope, 0).ifThenElse(aGuessT, Reactive.sub(aGuessT, currentX.div(currentSlope)));
-
-    // 2
-    currentSlope = getSlope(aGuessT, mX1, mX2);
-    currentX = calcBezier(aGuessT, mX1, mX2).sub(aX);
-    aGuessT = Reactive.eq(currentSlope, 0).ifThenElse(aGuessT, Reactive.sub(aGuessT, currentX.div(currentSlope)));
-
-    // 3
-    currentSlope = getSlope(aGuessT, mX1, mX2);
-    currentX = calcBezier(aGuessT, mX1, mX2).sub(aX);
-    aGuessT = Reactive.eq(currentSlope, 0).ifThenElse(aGuessT, Reactive.sub(aGuessT, currentX.div(currentSlope)));
+    for (let i = 0; i < 4; i++) {
+        currentSlope = getSlope(aGuessT, mX1, mX2);
+        currentX = calcBezier(aGuessT, mX1, mX2).sub(aX);
+        aGuessT = Reactive.eq(currentSlope, 0).ifThenElse(aGuessT, Reactive.sub(aGuessT, currentX.div(currentSlope)));
+    }
 
     return aGuessT;
 }
