@@ -1,4 +1,10 @@
-const Reactive = require('Reactive');
+import Reactive from 'Reactive';
+import { ScalarSignal } from 'ReactiveModule';
+
+// These values are established by empiricism with tests (tradeoff: performance VS precision)
+var NEWTON_ITERATIONS = 12;
+var NEWTON_MIN_SLOPE = 0.001;
+var SUBDIVISION_MAX_ITERATIONS = 10;
 
 function A(aA1, aA2) {
     // return 1.0 - 3.0 * aA2 + 3.0 * aA1;
@@ -30,13 +36,26 @@ function getSlope(aT, aA1, aA2) {
 function newtonRaphsonIterate(aX, aGuessT, mX1, mX2) {
     let currentSlope, currentX;
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < NEWTON_ITERATIONS; i++) {
         currentSlope = getSlope(aGuessT, mX1, mX2);
         currentX = calcBezier(aGuessT, mX1, mX2).sub(aX);
         aGuessT = Reactive.eq(currentSlope, 0).ifThenElse(aGuessT, Reactive.sub(aGuessT, currentX.div(currentSlope)));
     }
 
     return aGuessT;
+}
+
+function binarySubdivide(aX, aA, aB, mX1, mX2) {
+    let currentX, currentT;
+
+    for (let i = 0; i < SUBDIVISION_MAX_ITERATIONS; i++) {
+        currentT = Reactive.add(aA, Reactive.sub(aB, aA).mul(.5));
+        currentX = calcBezier(currentT, mX1, mX2).sub(aX);
+        aB = Reactive.gt(currentX, 0).ifThenElse(currentT, aB);
+        aA = Reactive.le(currentX, 0).ifThenElse(currentT, aA);
+    }
+
+    return currentT;
 }
 
 export default class {
@@ -47,7 +66,15 @@ export default class {
             this.sampler = function linear(progress) { return progress };
         } else {
             const getTForX = (aX) => {
-                return newtonRaphsonIterate(aX, aX, mX1, mX2);
+                const slope = getSlope(aX, mX1, mX2);
+
+                return Reactive.ge(slope, NEWTON_MIN_SLOPE).ifThenElse(
+                    newtonRaphsonIterate(aX, aX, mX1, mX2),
+                    Reactive.eq(slope, 0).ifThenElse(
+                        aX,
+                        binarySubdivide(aX, aX, aX, mX1, mX2)
+                    )
+                );
             }
 
             this.sampler = function bezier(progress) {
