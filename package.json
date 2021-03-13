@@ -1,6 +1,6 @@
 {
   "name": "sparkar-bezier-easing-ts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "cubic-bezier implementation for Spark AR animation easings.",
   "main": "BezierEasing.ts",
   "author": "Pofu Lu",
