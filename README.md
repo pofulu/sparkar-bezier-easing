@@ -31,9 +31,9 @@ const easing = new BezierEasing(0, 0, 1, 0.5);
 // easing allows to project x in [0.0,1.0] range onto the bezier-curve defined by the 4 points (see schema below).
 
 // use number
-easing.evaluate(0);		// Reactive.val(0.0)
-easing.evaluate(0.5);	// Reactive.val(0.3125)
-easing.evaluate(1);		// Reactive.val(1.0)
+easing.evaluate(0);   // Reactive.val(0.0)
+easing.evaluate(0.5); // Reactive.val(0.3125)
+easing.evaluate(1);   // Reactive.val(1.0)
 
 // use signal;
 const Time = require('Time');
