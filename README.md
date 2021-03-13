@@ -16,7 +16,7 @@ You can download script and import into your project, or use this with npm.
 
 0. Download [BezierEasing.ts](https://github.com/pofulu/sparkar-bezier-easing/raw/develop/BezierEasingDemo/scripts/BezierEasing.ts) (Right click and Save as)
 1. Drag/Import it into your project. ([Spark AR support TypeScript since v105](https://sparkar.facebook.com/ar-studio/learn/scripting/typescript-support))
-2. You can also [Click Here to Download Sample Projects](https://github.com/pofulu/sparkar-bezier-easing/releases/latest/download/BezierEasingDemo.arprojpkg).
+2. You can also [Click Here to Download Sample Project](https://github.com/pofulu/sparkar-bezier-easing/releases/latest/download/BezierEasingDemo.arprojpkg).
 
 
 
