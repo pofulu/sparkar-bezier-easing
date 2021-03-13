@@ -1,0 +1,31 @@
+{
+  "name": "sparkar-bezier-easing-ts",
+  "version": "1.0.0",
+  "description": "cubic-bezier implementation for Spark AR animation easings.",
+  "main": "BezierEasing.ts",
+  "author": "Pofu Lu",
+  "keywords": [
+    "sparkar",
+    "spark-ar",
+    "cubic",
+    "bezier",
+    "easing",
+    "animation",
+    "pofu"
+  ],
+  "files": [
+    "./BezierEasing.ts"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pofulu/sparkar-bezier-easing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pofulu/sparkar-bezier-easing/issues"
+  },
+  "homepage": "https://github.com/pofulu/sparkar-bezier-easing#readme",
+  "license": "MIT"
+}
