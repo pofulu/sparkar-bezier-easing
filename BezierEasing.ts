@@ -1,5 +1,4 @@
 import Reactive from 'Reactive';
-import { ScalarSignal } from 'ReactiveModule';
 
 // These values are established by empiricism with tests (tradeoff: performance VS precision)
 var NEWTON_ITERATIONS = 12;
@@ -58,7 +57,7 @@ function binarySubdivide(aX, aA, aB, mX1, mX2) {
     return currentT;
 }
 
-export default class {
+export default class BezierEasing {
     private sampler;
 
     /** You can generate the cubic-bezier value at [cubic-bezier.com](https://cubic-bezier.com/) or [cubic-bezier-generator](https://jakcharvat.github.io/cubic-bezier-generator/). */
