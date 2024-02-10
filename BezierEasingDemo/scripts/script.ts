@@ -1,8 +1,7 @@
 import BezierEasing from './BezierEasing';
-
-const Scene = require('Scene');
-const Reactive = require('Reactive');
-const Time = require('Time');
+import Scene from 'Scene';
+import Reactive from 'Reactive';
+import Time from 'Time';
 
 (async function () {
   const plane0 = await Scene.root.findFirst('plane0');

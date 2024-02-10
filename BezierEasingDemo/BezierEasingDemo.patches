@@ -1,0 +1,114 @@
+{
+  "id": "1704ab5deee5b5774866ac8b7594c806554e",
+  "revision": "1705ab5deee5b5774866ac8b7594c806554e",
+  "version": {
+    "dev": 0,
+    "patch": 0,
+    "prod": 171
+  },
+  "creatorIdentifier": "com.facebook.arstudio.skylight",
+  "creatorPlatform": "macosx",
+  "creatorFileVersion": {
+    "dev": 0,
+    "patch": 0,
+    "prod": 108
+  },
+  "visual_programming": {
+    "connections": [
+      {
+        "modelName": "patch_connection_model",
+        "identifier": "patch_connection_model:6512-54cc22e3-2045-4778-87a4-9640d4bf734d",
+        "fromPatch": "producer_patch_model:2780-7852528b-d3d8-4638-9d56-5d066911c0b2",
+        "fromPort": "110",
+        "toPatch": "template_patch_model:5837-54cc22e3-2045-4778-87a4-9640d4bf734d",
+        "toPort": "160"
+      },
+      {
+        "modelName": "patch_connection_model",
+        "identifier": "patch_connection_model:6513-54cc22e3-2045-4778-87a4-9640d4bf734d",
+        "fromPatch": "template_patch_model:5837-54cc22e3-2045-4778-87a4-9640d4bf734d",
+        "fromPort": "1",
+        "toPatch": "consumer_patch_model:1892-7852528b-d3d8-4638-9d56-5d066911c0b2",
+        "toPort": "20"
+      }
+    ],
+    "graphs": [
+      {
+        "modelName": "patch_graph",
+        "identifier": "patch_graph:1790-ab5deee5-b577-4866-ac8b-7594c806554e",
+        "subpatches": [
+          "consumer_patch_model:1892-7852528b-d3d8-4638-9d56-5d066911c0b2",
+          "producer_patch_model:2780-7852528b-d3d8-4638-9d56-5d066911c0b2",
+          "template_patch_model:5837-54cc22e3-2045-4778-87a4-9640d4bf734d"
+        ]
+      }
+    ],
+    "patches": [
+      {
+        "modelName": "consumer_patch_model",
+        "name": "Device",
+        "identifier": "consumer_patch_model:1892-7852528b-d3d8-4638-9d56-5d066911c0b2",
+        "object": "device:1780-ab5deee5-b577-4866-ac8b-7594c806554e",
+        "objectProperty": "render_pass_final_output",
+        "position": [
+          404,
+          20
+        ]
+      },
+      {
+        "modelName": "producer_patch_model",
+        "name": "Device",
+        "identifier": "producer_patch_model:2780-7852528b-d3d8-4638-9d56-5d066911c0b2",
+        "object": "device:1780-ab5deee5-b577-4866-ac8b-7594c806554e",
+        "position": [
+          -100,
+          92
+        ]
+      },
+      {
+        "modelName": "template_patch_model",
+        "name": "Scene Render Pass",
+        "identifier": "template_patch_model:5837-54cc22e3-2045-4778-87a4-9640d4bf734d",
+        "deleteUsAlong": [
+          "render_pass_texture_delegate_model:6514-54cc22e3-2045-4778-87a4-9640d4bf734d"
+        ],
+        "position": [
+          62.5,
+          -50
+        ],
+        "templateId": "builtin.group.sceneRenderPass",
+        "values": [
+          {
+            "port": "1000",
+            "value": {
+              "t": "int",
+              "v": 1
+            }
+          },
+          {
+            "port": "140",
+            "value": {
+              "t": "vec4",
+              "v": [
+                0,
+                0,
+                0,
+                1
+              ]
+            }
+          },
+          {
+            "port": "145",
+            "value": {
+              "t": "int",
+              "v": 0
+            }
+          }
+        ],
+        "variadicInfo": {
+          "output": 1
+        }
+      }
+    ]
+  }
+}

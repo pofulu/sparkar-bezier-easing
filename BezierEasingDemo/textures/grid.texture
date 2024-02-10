@@ -1,0 +1,36 @@
+{
+  "modelName": "texture",
+  "name": "grid",
+  "identifier": "texture:5873-ab5deee5-b577-4866-ac8b-7594c806554e",
+  "alphaPremultiplicationMode": "should_premultiply",
+  "assetDataHash": "622996aea47bf6e4804cb07888360539",
+  "assetLocator": "textures/grid.png",
+  "colorEncoding": "linear",
+  "compressionQuality": "high",
+  "coordMapping": "none",
+  "excludeDuringExport": false,
+  "excludeFromPackage": false,
+  "filter": "bilinear",
+  "hasOfflineMipmaps": false,
+  "height": 224,
+  "importIssues": {},
+  "isExternalAsset": true,
+  "smartTextureTargetSizeLimit": "largest",
+  "targetSize": "largest",
+  "uWrapMode": "clamp",
+  "vWrapMode": "clamp",
+  "width": 224,
+  "children": [
+    {
+      "modelName": "data_texture_metadata_model",
+      "name": "data_texture_metadata_model0",
+      "assetDataHash": "622996aea47bf6e4804cb07888360539",
+      "colorCount": 2,
+      "detectedAlphaChannel": "one_bit",
+      "detectedOriginalFormat": "png",
+      "entropyOfDistribution": 0.6932941705730028,
+      "pixelsHigh": 224,
+      "pixelsWide": 224
+    }
+  ]
+}
